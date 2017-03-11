@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<title>{$site_name}</title>
+    <meta http-equiv="Content-Language" content="es_ES">
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+<link rel="icon" href="__TMPL__Public/images/favicon.ico" type="image/ico">
+<link href="__TMPL__Public/style/base.css" rel="stylesheet" type="text/css">
+<link href="__TMPL__Public/style/trade.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="__TMPL__Public/js/jquery.js"></script>
+<script type="text/javascript" src="__TMPL__Public/js/js.js"></script>
+        <script type="text/javascript" language="javascript">  
+        function nofind(){
+        var img=event.srcElement;
+        img.src="__TMPL__Public/images/no-img.jpg";
+        img.onerror=null; 
+        }
+        </script>
+</head>
+<body>
+<!--header background start-->
+<div id="headerbgimg">
+     <ul>
+     	<li><img onerror="nofind();" src="__TMPL__Public/images/logo.png" width="190" height="80" /></li>
+     </ul>
+</div>
+<div id="headnavbg">
+	<ul>
+		<li><a href="{:u('list/index',array('id'=>141))}">Noticias</a></li>
+		<li><a href="{:u('list/index',array('id'=>142))}">IT</a></li>
+		<li><a href="{:u('list/index',array('id'=>143))}">Patente</a></li>
+		<li><a href="{:u('list/index',array('id'=>144))}">Eco-tecnología</a></li>
+	</ul>
+</div>
+<!--header background end-->
+<!--main start-->
+<div id="mainnewsbg">
+    <php>
+    $trade_all=sp_sql_posts('cid:141,142,143,144;field:tid,post_title,post_excerpt,smeta;limit:2;order:post_date desc');
+    </php>
+    <foreach name="trade_all" item="all">
+        <php>
+        $smeta=json_decode($all['smeta'],true);
+        </php>
+        <ul>
+            <li><a href="{:U('article/index',array('id'=>$all['tid']))}">
+                <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="200" height="250" />
+            </a></li>
+            <div><a href="{:U('article/index',array('id'=>$all['tid']))}"><h3>{$all.post_title}</h3>{$all.post_excerpt}</a></div>
+        </ul>
+    </foreach>
+</div>
+<div class="wrapper">
+    <div class="mainmemberbg">
+    <php>
+    $information_all=sp_sql_posts('cid:141;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+    </php>
+    <foreach name="information_all" item="all">
+        <php>
+        $smeta=json_decode($all['smeta'],true);
+        </php>
+    	<ul>
+    		<li><a href="{:U('article/index',array('id'=>$all['tid']))}">
+                <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="90" height="90" />
+            </a></li>
+    		<div><a href="{:U('article/index',array('id'=>$all['tid']))}"><h3>{$all.post_title}</h3>{$all.post_excerpt}</a></div>
+    	</ul>
+    </foreach>
+    </div>
+    <div class="rightmemeberbg">
+    <php>
+    $policy_all=sp_sql_posts('cid:144;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+    </php>
+    <foreach name="policy_all" item="all">
+        <php>
+        $smeta=json_decode($all['smeta'],true);
+        </php>
+    	<ul>
+    		<li><a href="{:U('article/index',array('id'=>$all['tid']))}">
+                <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="220" height="150"/>
+            </a></li>
+    		<div><a href="{:U('article/index',array('id'=>$all['tid']))}"><h3>{$all.post_title}</h3>{$all.post_excerpt}</a></div>
+    	</ul>
+    </foreach>
+    </div>
+</div>
+<div class="wrapper">
+	<ul>
+        <php>
+            $trade_c=sp_getslide('trade_c');
+        </php>
+        <foreach name="trade_c" item="c"><php>break;</php></foreach>
+        <img onerror="nofind();"  src="{$site_host}data/upload/{$c.slide_pic}" alt="{$c.slide_name}" width="960" height="90"/>
+	</ul>
+</div>
+<div id="fournewsbg">
+    <php>
+    $import_all=sp_sql_posts('cid:142;field:tid,post_title,post_excerpt,smeta;limit:8;order:post_date desc');
+    </php>
+    <foreach name="import_all" item="all">
+        <php>
+        $smeta=json_decode($all['smeta'],true);
+        </php>
+    	<ul>
+    		<li><a href="{:U('article/index',array('id'=>$all['tid']))}">
+                <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="230" height="150"/>
+            </a></li>
+    		<div><a href="{:U('article/index',array('id'=>$all['tid']))}"><h3>{$all.post_title}</h3>{$all.post_excerpt}</a></div>
+    	</ul>
+    </foreach>
+</div>
+<div class="wrapper">
+	<ul>
+        <php>
+            $trade_b=sp_getslide('trade_b');
+        </php>
+        <foreach name="trade_b" item="b"><php>break;</php></foreach>
+        <img onerror="nofind();"  src="{$site_host}data/upload/{$b.slide_pic}" alt="{$b.slide_name}" width="960" height="90"/>
+	</ul>
+</div>
+<div class="wrapper">
+	   <ul class="box">
+       
+    <php>
+    $export_all=sp_sql_posts('cid:143;field:tid,post_title,post_excerpt,smeta;limit:5;order:post_date desc');
+    </php>
+    <foreach name="export_all" item="all">
+        <php>
+        $smeta=json_decode($all['smeta'],true);
+        </php>
+    		<li><a href="{:U('article/index',array('id'=>$all['tid']))}">
+                <div class="toll_img">
+                	<img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="190" height="114"/>
+                </div>
+                <div class="toll_info"><p><h3>{$all.post_title}</h3>{$all.post_excerpt}</p></div>
+            </a></li>
+    </foreach>
+	</ul>	
+</div>
+<!--main end-->
+<!--friendlink start-->
+<include file="Public:footer" />
+<!--friendlink end-->
+</body>
+</html>

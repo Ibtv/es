@@ -1,0 +1,61 @@
+@charset "utf-8";
+/*本网站由web前端开发者(薛洪刚)开发;IT昵称(小贱);QQ(1399395438)*/
+/* CSS Document */
+body{background:#f3f2f2;}
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:14px;vertical-align:middle;}
+body{font-size:14px;font-family:Arial, Helvetica, sans-serif;margin:0 auto; font-family:"Arial";}
+table{border-collapse:collapse;border-spacing:0;}
+b,em,i{ font-style:normal; font-weight:normal;}
+h1,h2,h3{ font-size:14px;}
+h4{font-weight:normal; font-size:14px;}
+h5{ font-size:14px;}
+h6{ font-size:14px;font-weight:normal;}
+a:link{ color:#000; text-decoration:none;}
+a:hover{  color:#ff00;  text-decoration:underline;}
+a:visited{ color:#000; text-decoration:none;}
+.wrapper{width:960px; margin:5px auto; overflow:hidden;}
+/* header background start */
+#headerbgimg{background:url(../img/bg.jpg) repeat-x; height:131px;}
+#headerbgimg ul{width:960px; height:131px; margin:0 auto; overflow:hidden; }
+#headerbgimg ul li{margin-top:20px;}
+#headnavbg{background:url(../img/navbg.jpg) repeat-x; height:38px;}
+#headnavbg ul{width:960px; height:38px;  margin:0 auto; overflow:hidden;}
+#headnavbg ul li{width:160px; height:38px; float:left; overflow:hidden;line-height:38px;
+                font-size:20px; text-align:center;}
+#headnavbg a{color:#fff; text-decoration:none;}
+#headnavbg a:hover{  color:#fff;  text-decoration:underline;}
+#headnavbg ul li:hover{background:url(../img/navbg2.jpg) repeat-x; width:160px; height:38px;}
+/*main start */
+#mainnewsbg{width:960px; margin:5px auto; overflow:hidden;}
+#mainnewsbg ul{background:#fff; width:475px; height:270px; overflow:hidden; float:left; margin-right:5px;}
+#mainnewsbg ul li{width:200px; height:250px; padding-top:10px; float:left;}
+#mainnewsbg ul div{float:left; width:250px; height:250px;padding-top:10px;padding-left:10px;#margin-left:200px;
+	               #margin-top:-275px;  word-break:break-all; font-size:16px; overflow:hidden; line-height:18px;}
+.mainmemberbg{width:475px; float:left; background:#fff;}
+.mainmemberbg ul{width:475px; height:100px; margin-top:15px;}
+.mainmemberbg ul li{width:90px; height:90px; float:left; margin-top:10px;}
+.mainmemberbg ul div{width:360px; height:96px; float:left; word-break:break-all;overflow:hidden;margin-left:10px;
+	                 margin-top:10px; #margin-left:100px;#margin-top:-90px; }
+.rightmemeberbg{width:475px; float:left;}
+.rightmemeberbg ul{width:220px; height:230px; float:left; background:#d2d2d2;margin-left:17px;}
+.rightmemeberbg ul li{width:220px; height:150px; }
+.rightmemeberbg ul div{width:220px; height:80px; overflow:hidden; word-break:break-all;line-height:15px;}
+
+#fournewsbg{width:960px; margin:0px auto; overflow:hidden;}
+#fournewsbg ul{background:#fff;width:230px; height:250px; float:left; margin-top:5px;  margin-left:8px;}
+#fournewsbg ul li{width:230px; height:150px;}
+#fournewsbg ul div{width:230px; height:100px; word-break:break-all; overflow:hidden; line-height:20px;}
+.box li{ width:190px; height:114px; margin-right:2px; float:left; overflow:hidden; position:relative;}
+.toll_img{ width:190px; height:114px;}
+.toll_info{ height:114px; background:#EEE; vertical-align:middle;display:table-cell;}
+.box li p{ padding:10px; font:normal 13px/24px 'Arial'; cursor:pointer; word-break:break-all; overflow:hidden; line-height:20px;}
+.box li a{ color:#666; text-decoration:none; position:absolute; top:0; left:0;}
+
+#friendlinkbg{background:#bfbbbb; width:960px; height:200px; margin:5px auto; overflow:hidden;}
+
+
+
+
+

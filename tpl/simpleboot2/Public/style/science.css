@@ -1,0 +1,151 @@
+/*本网站由web前端开发者(薛洪刚)开发;IT昵称(小贱);QQ(1399395438)*/
+/*css Document*/
+body{font-size:14px;font-family:Arial, Helvetica, sans-serif;margin:0 auto; font-family:"Arial";}
+body,ul,li,h1,h2,h3,h4{margin:0px; padding:0px; border:0px; list-style:none; border:0px;}
+a:link{ color:#333; text-decoration:none;}
+a:hover{  color:#ff00;  text-decoration:underline;}
+a:visited{ color:#000; text-decoration:none;}
+
+/*body start*/
+body{background:#f0f0f0;}
+/*header nav start*/
+#headsubnavbg{background:#990501;}	
+#headsubnavbg ul{ height:40px; width:960px; margin:0 auto;}
+#headsubnavbg ul li{ float:left;  width:160px; height:40px; line-height:40px; text-align:center;font-size:18px;font-weight:bold;}
+#headsubnavbg a:link{ color:#fff; text-decoration:none;}
+#headsubnavbg a:hover{ color:#000; text-decoration:none;}
+/*Scroll News start*/
+#Scroll_News{width:960px; height:38px; line-height:38px; margin:0 auto; overflow:hidden; background:#CCC; border-bottom:#999 2px solid;}
+#Scroll_News .m2lone{width:960px; height:38px; margin:0 auto; line-height:38px;overflow:hidden;}
+#Scroll_News a{color:#000; text-decoration:none;margin: 0 10px;}
+#Scroll_News a:hover{  color:#ff00;  text-decoration:underline;}
+/*banner start*/
+.banner{ height:215px; width:960px; margin:0 auto; padding-top:10px; overflow:hidden;}
+a { color: #000; text-decoration: none; }
+a:hover { text-decoration: underline; }
+a img { border: none; }
+.cl:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.cl { zoom: 1; }
+.frame { margin-bottom: 10px; border: 1px solid #e1e1e1; background: #FFF; }
+.title { padding: 0 10px; height: 32px; font-size: 14px; font-weight: 700; line-height: 32px; overflow: hidden; }
+.block { margin: 10px 10px 0; }
+.temp { margin: 1px; }
+.slideshow { clear: both; }
+.slideshow li { position: relative; overflow: hidden; }
+.slideshow span.title { position: absolute; bottom: 0; left: 0; margin-bottom: 0; width: 100%; height: 32px; line-height: 32px; font-size: 14px; text-indent: 10px; }
+.slideshow span.title, .slidebar li { background: rgba(0,0,0,0.3); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #30000000,endColorstr = #30000000); color: #FFF; overflow: hidden; }
+.slidebar li { float: left; margin-right: 1px; width: 20px; height: 20px; line-height: 20px; text-align: center; font-size: 10px; cursor: pointer; }
+.slidebar li.on { background: rgba(255,255,255,0.5); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #50FFFFFF,endColorstr = #50FFFFFF); color: #000; font-weight: 700; }
+ul, li { list-style: none; }
+a:hover { text-decoration: underline; color: #a50001; }
+.frame { background: none; border: 0px solid #fff; margin-bottom: 0px; }
+.temp { margin: 0; }
+.slidebar { position: absolute; top: 5px; left: 4px; }
+.slideshow span.title, .slidebar li { background: rgba(0,0,0,0.3); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #90000000,endColorstr = #90000000); color: #FFF; overflow: hidden; }
+.slidebar li.on { background: rgba(255,255,255,0.5); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #90000000,endColorstr = #90000000); color: #ff0; font-weight: 700; }
+.slideshow SPAN.title { text-indent: 0px; }
+.block { margin: 0;position: relative; }
+#frameHlicAe { margin: 0px !important; border: 0px !important; }
+.comiis_wrap960, .comiis_wrapad { margin: 0 auto; width: 960px; }
+.comiis_wrapad { margin-top: 10px; }
+.comiis_wrapad { overflow: hidden; }
+.comiis_wrapad img { float: left; margin-top: 0px; }
+#slidesImgs li { width: 960px; height: 205px; display: none; }
+/*hot news start*/
+.hotnews{width:960px; height:290px;margin:0 auto;}
+.hotnews .one{height:270px; width:225px;  float:left; margin:0px; padding-top:20px; padding-left:0px;} 
+.hotnews dl{height:270px; width:225px; float:left; margin:7px;}
+.hotnews dl dd{height:220px; width:225px; padding:0px;  margin:0px; overflow:hidden;}
+.hotnews dl dt{ height:60px; width:215px; overflow:hidden; background:#FFF; padding-top:8px; padding:5px 5px; margin:0px; }
+/*ad start*/
+.ad{width:960px; height:65px; padding-top:20px;  margin:0 auto;}
+.ad1{float:left; overflow:hidden; margin:0 auto;}
+.ad2{float:left; overflow:hidden; margin:0 auto; padding-left:20px;}
+/*potonews start*/
+.potonews{ width:960px;height:720px; margin:0 auto;}
+.potonews1{ width:200px; height:720px;float:left;}
+.potonews1 ul{width:200px; height:220px; padding-top:20px;}
+.potonews1 ul li {width:200px; height:140px; overflow:hidden;}
+.potonews1 ul div{background:#FFF;height:70px; width:190px;overflow:hidden; word-break:break-all; font-weight:bold; padding:5px}
+
+.potonews2{width:200px; height:720px; float:left; overflow:hidden; padding-left:20px;}
+.potonews2 ul{width:200px; height:220px; padding-top:20px;}
+.potonews2 ul li {width:200px; height:140px; overflow:hidden;}
+.potonews2 ul div{background:#FFF;height:70px; width:190px;overflow:hidden; word-break:break-all; font-weight:bold; padding:5px;}
+.potonews2 ul .mil{ height:380px; width:200px; overflow:hidden;}
+
+.potonews3{width:200px; height:720px;float:left; padding-left:20px;}
+.potonews3 ul{width:200px; height:220px; padding-top:20px;}
+.potonews3 ul li {width:200px; height:140px; overflow:hidden;}
+.potonews3 ul div{background:#FFF; height:70px; width:190px;overflow:hidden; word-break:break-all; font-weight:bold; padding:5px;}
+
+.potonews4{width:300px; height:720px;float:left; padding-left:20px;}
+.potonews4 guanggao{ height:320px; width:300px; overflow:hidden; padding-top:20px; }
+.potonews4 .newslist{ width:300px; padding-top:20px;;}
+.potonews4 .newslist .title{height:30px; width:300px;background:#FFF;padding:0; margin:0px; color:#FFF;}
+.potonews4 .newslist .mue{width:298px; height:318px; border:1px solid #999; }
+.potonews4 .newslist .mue li{width:270px; height:50px; padding:0 5px; border-bottom: #999 1px solid; line-height:50px; overflow:hidden; float:left; margin-left:10px;}
+.potonews4 .newslist .mue li span{ padding-left:10px; overflow:hidden; font-size:16px;}
+
+/*.Character start*/
+.min{ height:1043px; width:640px;width:960px; margin:0 auto; padding-top:20px;}
+.minleft{ width:640px; float:left;}
+
+.min .Character{height:230px; width:610px; padding:15px; background:#FFF;}
+.min .Character ul{ height:230px; width:290px; float:left; overflow:hidden}
+.Character ul p{ font-weight:bold; margin-top:10px; margin-left:5px;  font-size:20px; }  
+.Character dl{height:115px; width:300px;float:left; margin:0px; padding:10px;}
+.Character dl dd{height:100px; width:180px; margin:0px; padding:0px; float:left; font-size:16px; font-weight:bold; overflow:hidden;} 
+.Character dl dt{height:100px; width:120px; float:left; overflow:hidden;} 
+.hr{ height:1px; width:310px; background:#999; overflow:hidden; margin-bottom:15px; float:right; color:#333;}
+
+.articlelist{ height:280px; width:620px; padding:10px; margin-top:20px;}
+.tip{ height:30px; width:600px; border-bottom:#999 1px solid; font-size:20px; font-weight:bold; color:#333; padding:0px 10px;}
+.articlelist a:link{float:left;}
+.list .left{width:300px; height:250px;  padding:0px; margin-top:5px; overflow:hidden; float:left;}
+.list .left dd{width:10px; height:10px;margin:0px; padding:0px; margin:0px; float:left;}
+.list .left dt{width:300px; font-size:16px; color:#333; float:left; line-height:21px;height: 42px;overflow: hidden;}
+.list .left dt .con{float:left;}
+
+.list .right{ height:250px; width:300px; float:left; margin-top:5px; padding-left:20px;}
+.list .right dd{width:10px; height:10px;margin:0px; padding:0px; margin:0px; float:left;}
+.list .right dt{width:285px; padding-left:5px; font-size:16px; float:left; line-height:20px;}
+.list .right dt .cont{float:left;}
+
+/*Plate start*/
+.Plate{width:640px; height:424px; margin-top:20px;}
+.mil1{width:310px; height:424px; background:#fff; float:left; border:#CCC 1px solid;}
+.name1{ width:270px; padding:0px 20px; height:30px; background:#FFF; font-size:20px; font-weight:bold; border-bottom:#999 1px solid;}
+.name1 span{float:right;}
+.mil1 dl{border-bottom:#999 1px solid; height:110px; width:290px; background:#FFF; margin:0px; padding:10px 10px; overflow:hidden; float:left;}
+.mil1 dl dt{ height:110px; width:120px; margin:0px; padding:0px; float:left; overflow:hidden;}
+.mil1 dl dd{ height:115px; width:160px; float:left; margin:0px; padding-left:10px; overflow:hidden;}
+.mil1 dl dd h5{ padding:0px; margin:0px; font-size:16px;}
+
+.mil2{width:310px; height:424px; background:#FFF; float:left; margin-left:15px; border:#CCC 1px solid; padding:0px;}
+.name2{width:270px; padding:0px 20px; height:30px; background:#FFF; font-size:20px; font-weight:bold; border-bottom:#999 1px solid;}
+.name2 span{float:right;}
+.mil2 dl{border-bottom:#999 1px solid; height:110px; width:290px; background:#FFF; margin:0px; padding:10px 10px; overflow:hidden; float:left;}
+.mil2 dl dt{ height:110px; width:120px; margin:0px; padding:0px; float:left; overflow:hidden; border:#FFF 1px solid;}
+.mil2 dl dd{ height:115px; width:158px; float:left; margin:0px; padding-left:10px; overflow:hidden;}
+.mil2 dl dd h5{ padding:0px; margin:0px; font-size:16px;}
+
+/*listmore start*/
+.listmore{ height:1038px; margin-left:20px; width:300px; float:left; background: #FFF;}
+.listmore dl{width:280px; height:109px; padding:10px; margin:0px; border-bottom:#CCC solid 1px; overflow:hidden;}
+.listmore dl dt{overflow:hidden; border:#fff 1px solid; height:110px; width:180px; padding:2px; overflow:hidden; float:left;}
+.listmore dl dd{float:left; height:110px; width:80px; margin-left:10px; font-size:16px; overflow:hidden; line-height:18px;}
+
+/*guanggao start*/
+.guanggao{width:960px; height:220px; margin:0 auto;}
+.guanggao ul{background:#FFF; margin:1px; height:95px; width:180px; float:left;padding: 5px;}	
+
+/*foot start*/
+.foot{ width:960px; height:300px;margin:0 auto; background:#0F3;}
+
+ 
+
+
+
+
+

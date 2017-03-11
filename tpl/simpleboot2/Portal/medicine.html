@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<title>{$site_name}</title>
+    <meta http-equiv="Content-Language" content="es_ES">
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+<link rel="icon" href="__TMPL__Public/images/favicon.ico" type="image/ico">
+<link href="__TMPL__Public/style/index.css" rel="stylesheet" type="text/css">
+<link href="__TMPL__Public/style/base.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__TMPL__Public/js/jquery.1.4.2-min.js"></script>
+<script type="text/javascript" src="__TMPL__Public/js/scrollbar.js"></script>
+        <script type="text/javascript" language="javascript">  
+        function nofind(){
+        var img=event.srcElement;
+        img.src="__TMPL__Public/images/no-img.jpg";
+        img.onerror=null; 
+        }
+        </script>
+</head>
+<body>
+<div id="headernavbg">
+	<ul>
+		<li><a href="{:u('list/index',array('id'=>171))}">Exclusiva</a></li>
+		<li><a href="{:u('list/index',array('id'=>172))}">Político</a></li>
+		<li><a href="{:u('list/index',array('id'=>173))}">Economista</a></li>
+		<li><a href="{:u('list/index',array('id'=>174))}">Científico</a></li>
+		<li><a href="{:u('list/index',array('id'=>175))}">Artista</a></li>
+		<li><a href="{:u('list/index',array('id'=>176))}">Empresario</a></li>
+	</ul>
+</div>
+<!--banner start-->
+   <div id="mainbannerbg">
+   	    <ul>
+		<php>
+            $main_t=sp_getslide('main_t');
+        </php>
+        <foreach name="main_t" item="t"><php>break;</php></foreach>
+        <img onerror="nofind();" src="{$site_host}data/upload/{$t.slide_pic}" alt="{$t.slide_name}" width="960" height="90"  />
+   	    </ul>
+   </div>
+<!--banner end-->
+<!--main start-->
+<div id="mainslidebg">
+	<div class="section">
+		<ul class="clearfix">
+            <php>
+            $noticias_all=sp_sql_posts('cid:171,172,173,174,175,176;field:tid,post_title,smeta;limit:9;order:post_date desc');
+            </php>
+            <foreach name="noticias_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+			<li>
+				<div class="photo"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="200" height="150" /></div>
+				<div class="rsp"></div>
+				<div class="text"><a href="{:U('article/index',array('id'=>$all['tid']))}"><h3>{$all.post_title}</h3></a></div>
+			</li>
+            </foreach>
+		</ul>
+	<div class="clear"></div>
+	 <script type="text/javascript">
+		$(document).ready(function(){
+			
+			$(".section ul li .rsp").hide();
+			
+			$(".section	 ul li").hover(function(){
+				$(this).find(".rsp").stop().fadeTo(500,0.5)
+				$(this).find(".text").stop().animate({left:'0'}, {duration: 500})
+			},function(){
+				$(this).find(".rsp").stop().fadeTo(500,0)
+				$(this).find(".text").stop().animate({left:'200'}, {duration: "fast"})
+				$(this).find(".text").animate({left:'-200'}, {duration: 0})
+			});
+
+		});
+	   </script>
+    </div>
+	<div class="righthdtextbg">
+		<ul>
+            <php>
+            $inversión_all=sp_sql_posts('cid:171;field:tid,post_excerpt;limit:5;order:post_date desc');
+            </php>
+            <foreach name="inversión_all" item="all">
+				<li><a href="{:U('article/index',array('id'=>$all['tid']))}">{$all.post_excerpt}</a></li>
+            </foreach>
+            
+		</ul>
+	</div>
+</div>
+<div id="mainadvertbg">
+	<ul>
+            <php>
+            $viajes_all=sp_sql_posts('cid:172;field:tid,smeta;limit:1;order:post_date desc');
+            </php>
+            <foreach name="viajes_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+				<li><a href="{:U('article/index',array('id'=>$all['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="960" height="200" /></a></li>
+            </foreach>
+	</ul>
+</div>
+<div id="mainvideobg">
+	<div class="leftnewsbg">
+		<ul>
+            <php>
+            $comercio_all=sp_sql_posts('cid:173;field:tid,post_excerpt,smeta;limit:9;order:post_date desc');
+            </php>
+            <foreach name="comercio_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                <li>
+                    <span><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="180" height="130" /></span>
+                    <div><a href="{:U('article/index',array('id'=>$all['tid']))}">{$all.post_excerpt}</a></div>
+                </li>
+            </foreach>
+		</ul>
+	</div>
+	<div class="righthdtextbg">
+		<ul>
+            <php>
+            $inversión_all=sp_sql_posts('cid:174;field:tid,post_excerpt;limit:3;order:post_date desc');
+            </php>
+            <foreach name="inversión_all" item="all">
+				<li><a href="{:U('article/index',array('id'=>$all['tid']))}">{$all.post_excerpt}</a></li>
+            </foreach>
+		</ul>
+		<div class="rightgaobg">
+		<php>
+            $main_rc=sp_getslide('main_rc');
+        </php>
+        <foreach name="main_rc" item="rc"><php>break;</php></foreach>
+        <img onerror="nofind();" src="{$site_host}data/upload/{$rc.slide_pic}" alt="{$rc.slide_name}" width="330" height="130"  /></div>
+	</div>
+	 <div class="scr_con">
+			<div id="dv_scroll">
+				<div id="dv_scroll_text" class="Scroller-Container">
+					<div class="newslist">
+						<ul>
+            <php>
+            $inversión_all=sp_sql_posts('cid:175;field:tid,post_excerpt;limit:26;order:post_date desc');
+            </php>
+            <foreach name="inversión_all" item="all">
+				<li><a href="{:U('article/index',array('id'=>$all['tid']))}">{$all.post_excerpt}</a></li>
+            </foreach>
+						</ul>				
+					</div><!--about end-->
+				</div>
+			</div><!--dv_scroll end-->
+			<div id="dv_scroll_bar">
+				<div id="dv_scroll_track" class="Scrollbar-Track">
+					<div class="Scrollbar-Handle"></div>
+				</div>
+			</div><!--dv_scroll_bar end-->
+		</div><!--scr_con end-->
+</div>
+<div id="maintreebannerbg">
+	<ul>
+         <php>
+        $интервью_all=sp_sql_posts('cid:176;field:tid,post_title,post_excerpt,smeta;limit:3;order:post_date desc');
+        </php>
+        <foreach name="интервью_all" item="all">
+        <php>
+        $smeta=json_decode($all['smeta'],true);
+        </php>
+		<li><a href="{:U('article/index',array('id'=>$all['tid']))}"><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="290" height="160.jpg" /></a></li>
+        </foreach>
+	</ul>
+</div>
+<!--main end-->
+
+<!-- foot 开始-->
+
+<include file="Public:footer" />
+<!--footer结束 -->	  
+
+</body>
+</html>

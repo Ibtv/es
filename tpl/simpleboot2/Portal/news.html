@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<title>{$site_name}</title>
+    <meta http-equiv="Content-Language" content="es_ES">
+    <meta name="author" content="Powerless"> 
+    <meta name="Copyright" content="{$site_seo_title}">
+	<meta name="keywords" content="{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+<link rel="icon" href="__TMPL__Public/images/favicon.ico" type="image/ico">
+<link href="__TMPL__Public/style/base.css" rel="stylesheet" type="text/css">
+<link href="__TMPL__Public/style/news.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" language="javascript">  
+        function nofind(){
+        var img=event.srcElement;
+        img.src="__TMPL__Public/images/no-img.jpg";
+        img.onerror=null; 
+        }
+        </script>
+</head>
+<body>
+
+<div class="headbannerbg">
+	<ul>
+            <php>
+            $china_all=sp_sql_posts('cid:111;field:tid,smeta;limit:4;order:post_date desc');
+            </php>
+            <foreach name="china_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                <li><a href="{:U('article/index',array('id'=>$all['tid']))}">
+                <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="220" height="120" /></a></li>
+            </foreach>
+            
+	</ul>
+</div>
+<div id="navborderbg"></div>
+<div id="headsubnavbg">
+	<ul>
+		<li><a href="{:u('list/index',array('id'=>111))}">China</a></li>
+		<li><a href="{:u('list/index',array('id'=>112))}">España</a></li>
+		<li><a href="{:u('list/index',array('id'=>113))}">América Latina </a></li>
+		<li><a href="{:u('list/index',array('id'=>114))}">Asia-Pacífico</a></li>
+		<li><a href="{:u('list/index',array('id'=>115))}">América del Norte </a></li>
+		<li><a href="{:u('list/index',array('id'=>116))}">Europa</a></li>
+		<li><a href="{:u('list/index',array('id'=>117))}">África</a></li>
+		<li><a href="{:u('list/index',array('id'=>118))}">Internacional</a></li>
+	</ul>
+</div>
+<div id="scrollborderbg">
+	<div id="headscrollbg">
+		<div class="m2lone">
+			<div style="width:960px;height:38px;overflow:hidden;word-break: break-all;" onMouseOver="stop()" onMouseOut="start()">
+			<table width="960" border="0" cellspacing="0" cellpadding="0" id="scrollimg" height="21">
+			<tr>
+			<td id="simg">
+			<TABLE width="960" border="0" cellspacing="0" cellpadding="0" height="21">
+			<tr>
+			<td class="zi">
+            <php>
+            $news_all=sp_sql_posts('cid:111,112,113,114,115,116,117,118;field:tid,post_title;limit:9;order:post_date desc');
+            </php>
+            <foreach name="news_all" item="all">
+                <a href="{:U('article/index',array('id'=>$all['tid']))}">{$all.post_title}</a>
+            </foreach>
+            </td>
+			</tr>
+			</TABLE>
+			</td>
+			<td id="simg1"></td>
+			</tr>
+			</table>
+			</div>
+			<script LANGUAGE="Javascript">
+			var tm=null
+			function newsScroll() {
+			if(scrollimg.parentNode.scrollLeft!=(scrollimg.clientWidth/2))
+			scrollimg.parentNode.scrollLeft++;
+			else
+			scrollimg.parentNode.scrollLeft=0
+			}
+			window.onload=function() {
+			simg1.innerHTML=simg.innerHTML
+			tm=setInterval('newsScroll()',20)
+			}
+			function stop()
+			{
+			clearInterval(tm)
+			}
+			function start()
+			{
+			tm=setInterval('newsScroll()',20)
+			}
+			</script> 
+		</div>
+	</div>
+</div>
+<!--header end-->
+
+<!--main start-->
+<div id="mainvideobg">
+    <div class="lefttubg">
+             <php>
+            $us_all=sp_sql_posts('cid:112;field:tid,post_title,post_excerpt,smeta;limit:1;order:post_date desc');
+            </php>
+            <foreach name="us_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                <ul>
+                    <li><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="450" height="315" /></li>
+                    <div><a href="{:U('article/index',array('id'=>$all['tid']))}"><h3>{$all.post_title}</h3>{$all.post_excerpt}</a></div>
+                </ul>
+            </foreach>
+	</div>
+	<div class="righttubg">
+             <php>
+            $us_all=sp_sql_posts('cid:112;field:tid,post_title,smeta;limit:5;order:post_date desc');
+            $a=0;
+            </php>
+            <foreach name="us_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+            	$a++;
+                if($a>1){
+                </php>
+                <ul>
+                    <li><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="230" height="150" /></li>
+                    <div><a href="{:U('article/index',array('id'=>$all['tid']))}"><h3>{$all.post_title}</h3></a></div>
+                </ul>
+                <php> }</php>
+            </foreach>
+	</div>
+</div>
+<div id="bannertwobg">
+	<ul>
+        <php>
+            $news_t=sp_getslide('news_t');
+        </php>
+        <foreach name="news_t" item="t"><php>break;</php></foreach>
+        <img onerror="nofind();"  src="{$site_host}data/upload/{$t.slide_pic}" alt="{$t.slide_name}" width="960" height="90"/>
+	</ul>
+</div>
+<div id="mainnewsbg">
+	<div class="leftnewsbg">
+            <php>
+            $europe_all=sp_sql_posts('cid:113;field:tid,post_title,smeta;limit:5;order:post_date desc');
+            </php>
+            <foreach name="europe_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                <ul>
+                    <li><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="200" height="100" /></li>
+                    <div><a href="{:U('article/index',array('id'=>$all['tid']))}"><h3>{$all.post_title}</h3></a></div>
+                </ul>
+            </foreach>
+	</div>
+	<div class="rightnewsbg">
+    
+            <php>
+            $asia_all=sp_sql_posts('cid:114;field:tid,post_title,post_excerpt,smeta;limit:4;order:post_date desc');
+            </php>
+            <foreach name="asia_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                <ul>
+                    <li><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="230" height="130"/></li>
+                    <div><a href="{:U('article/index',array('id'=>$all['tid']))}"><h3>{$all.post_title}</h3>{$all.post_excerpt}</a></div>
+                </ul>
+            </foreach>
+	</div>
+</div>
+<div id="bannertwobg">
+	<ul>
+        <php>
+            $news_c=sp_getslide('news_c');
+        </php>
+        <foreach name="news_c" item="c"><php>break;</php></foreach>
+        <img onerror="nofind();"  src="{$site_host}data/upload/{$c.slide_pic}" alt="{$c.slide_name}" width="960" height="90"/>
+	</ul>
+</div>
+<div id="mainhotbg">
+
+            <php>
+            $latin_all=sp_sql_posts('cid:115;field:tid,post_title,smeta;limit:5;order:post_date desc');
+            </php>
+            <foreach name="latin_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                <ul>
+                    <li><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="180" height="150"/></li>
+                    <div><a href="{:U('article/index',array('id'=>$all['tid']))}"><h3>{$all.post_title}</h3></a></div>
+                </ul>
+            </foreach>
+</div>
+<div id="mainmemberbg">
+	<div class="leftmemberbg">
+    
+            <php>
+            $africa_all=sp_sql_posts('cid:116;field:tid,post_title,smeta;limit:4;order:post_date desc');
+            </php>
+            <foreach name="africa_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                <ul>
+                    <li><img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="130" height="110" /></li>
+                    <div><a href="{:U('article/index',array('id'=>$all['tid']))}"><h3>{$all.post_title}</h3></a></div>
+                </ul>
+            </foreach>
+	</div>
+	<div class="rightmemberbg">
+		<ul>
+        
+            <php>
+            $mideast_all=sp_sql_posts('cid:117;field:tid,smeta;limit:4;order:post_date desc');
+            </php>
+            <foreach name="mideast_all" item="all">
+                <php>
+                $smeta=json_decode($all['smeta'],true);
+                </php>
+                <li><a href="{:U('article/index',array('id'=>$all['tid']))}">
+                <img onerror="nofind();" src="{$site_host}data/upload/{$smeta.thumb}" width="150" height="150" /></a></li>
+            </foreach>
+		</ul>
+	</div>
+</div>
+<!--main end-->
+<!--friendlink start-->
+
+<include file="Public:footer" />
+<!--friendlink end-->
+</body>
+</html>

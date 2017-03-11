@@ -1,0 +1,84 @@
+@charset "utf-8";
+/*本网站由web前端开发者(薛洪刚)开发;IT昵称(小贱);QQ(1399395438)*/
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:14px;vertical-align:middle;}
+body{font-size:14px;font-family:Arial, Helvetica, sans-serif;margin:0 auto; font-family:"Arial";}
+table{border-collapse:collapse;border-spacing:0;}
+b,em,i{ font-style:normal; font-weight:normal;}
+h1,h2,h3{ font-size:14px;}
+h4{font-weight:normal; font-size:14px;}
+h5{ font-size:14px;}
+h6{ font-size:14px;font-weight:normal;}
+a:link{ color:#000; text-decoration:none;}
+a:hover{  color:#ff00;  text-decoration:underline;}
+a:visited{ color:#000; text-decoration:none;}
+/* header nav start */
+#headernavbg{background:#00a7e7; height:30px; width:100%;margin:0 auto;}
+#headernavbg ul{width:960px;margin:0px auto;} 
+#headernavbg ul li{width:160px; line-height:30px;font-size:15px; text-align:center; float:left;}
+#headernavbg ul li:hover{background:#0b92c6; width:160px; height:30px;}
+#headernavbg a{color:#fff; text-decoration:none;}
+#headernavbg a:hover{color:#000;text-decoration:underline;}
+/* header navmenu start */
+#headsubnavbg{background:url(../img/navbg.jpg) repeat-x; height:170px;width:100%;}
+#headsubnavbg ul{width:960px; height:160px; margin:0px auto; padding-top: 10px;}
+#headsubnavbg ul li{width:240px; height:160px; float:left;}
+/* left nav start */
+.headernavmenu{width:1320px;margin:0px auto;}
+#leftnavbg{width:170px; position:fixed; top:0px;z-index:333;}
+#leftnavbg ul{background:#d8d6d6;width:170px; height:100%; }
+#leftnavbg ul li{width:170px; height:60px; line-height:60px; font-size:18px; text-align:center;  border-bottom:#919394 1px solid;}
+#leftnavbg ul li:hover{background:#0997ce; height:60px; width:170px;}
+/* banner start */
+#mainbannerbg{width:960px; height:90px; margin:0px auto;overflow:hidden;}
+#mainbannerbg ul li img{#margin-top:5px;}
+/* main start */
+#mainslidebg{width:960px; margin:5px auto; height:475px;overflow:hidden;}
+.section{width:630px;float:left;overflow:hidden;}
+.section ul{width:630px;}
+.section ul li{float:left;margin-right:10px;margin-bottom:10px;display:inline;width:200px;height:150px;overflow:hidden;position:relative;}
+.section ul li .photo{width:200px;height:150px;overflow:hidden;}
+.section .rsp{width:200px;height:150px;overflow:hidden;position: absolute;background:#000;top:0px;left:0px;}
+.section .text{position:absolute;width:200px;height:150px;left:-200px;top:0px;overflow:hidden;}
+.section .text h3{width:200px;margin-top:50px;line-height:55px;
+color:#FFFFFF;background:#000000;font-family:"microsoft yahei";font-size:16px;}
+.righthdtextbg{ width:330px; float:left;}
+.rightsidenavbg{background:#00a7e7; width:330px; height:62px;}
+.rightsidenavbg dl{width:330px; height:62px; }
+.rightsidenavbg dl dd{line-height:30px;width:330px; height:30px; overflow:hidden; font-weight:bold;text-align:center;
+	                  border-bottom:#0892c9 1px solid;}
+.righthdtextbg ul{width:330px; height:270px;}
+.righthdtextbg ul li{width:310px; height:80px; margin-top:10px; word-break:break-all; border-left:#00a7e7 1px solid;
+	                 overflow:hidden; line-height:20px; padding-left:10px; padding-right:10px;}
+.righthdtextbg ul li:hover{background:#00a7e7;width:310px; height:80px;}  
+.rightbannerbg{width:330px; height:130px; #margin-top:10px;} 
+#mainadvertbg{width:960px; height:200px; margin:0 auto; overflow:hidden;} 
+#mainvideobg{background:#f8f8f8;width:960px;margin:10px auto; overflow:hidden;}
+.leftnewsbg{ width:630px; float:left;}
+.leftnewsbg ul{width:630px; height:240px; margin-top:8px;} 
+.leftnewsbg ul li{background:#f3f3f3; border:#dedcdc 1px solid;text-shadow:0px 1px 0px #00a7e7; 
+width:200px; height:240px; float:left; margin-right:8px;}
+.leftnewsbg ul li span img{width:200px; height:150px;}       
+.leftnewsbg ul li div{width:180px; height:90px; padding-left:10px; word-break:break-all; overflow:hidden; line-height:18px;}
+.rightgaobg{width:330px; height:130px; margin-top:5px;}
+/* newslist */
+.newslist{padding:10px; margin:0 auto; text-align:left}
+.newslist li{height:32px;line-height:32px;border-bottom:dashed 1px #dadbdb;padding:0 10px;overflow:hidden;}
+/* scr_con style */
+.scr_con {position:relative;height:330px;border:solid 1px #dadbdb;width:326px;float:left; margin-top:5px;}
+#dv_scroll{position:absolute;height:310px;overflow:hidden;width:320px;}
+#dv_scroll .Scroller-Container{width:100%;}
+#dv_scroll_bar {position:absolute;right:0;top:10px;width:15px;height:310px;border-left:2px solid #dadbdb;}
+#dv_scroll_bar .Scrollbar-Track{position:absolute;left:0;top:20px;width:15px;height:270px;}
+#dv_scroll_bar .Scrollbar-Handle{position:absolute;left:-8px;top:0;width:15px;height:29px;overflow:hidden;
+	                              background:url(../img/srcoll.gif) no-repeat;cursor:pointer;}
+#dv_scroll_text {position:absolute;}
+.scr_con a{color:#333;text-decoration:none;}
+.scr_con a:hover{color:#ff6600;text-decoration:underline;}
+#maintreebannerbg{width:960px; margin:0 auto; overflow:hidden;}
+#maintreebannerbg ul{ width:960px;float: left;}
+#maintreebannerbg ul li{float:left;  width:310px; height:160px;margin: 10px 0;}
+/* footer start */
+#friendlinkbg{background:url(../img/navbg.jpg) repeat-x; height:170px; width:960px; margin:5px auto; overflow:hidden;}
